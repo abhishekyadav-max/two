@@ -1,5 +1,10 @@
 name: Docker Build & Push to ECR
 
+# Required permissions for OIDC authentication
+permissions:
+  id-token: write     # This is required to get OIDC token and assume AWS role
+  contents: read      # For checkout action
+
 on:
   workflow_call:
     inputs:
